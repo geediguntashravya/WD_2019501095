@@ -1,0 +1,72 @@
+$color: teal;
+$bor: 1px solid black;
+$marg: 20px;
+$pad: 10px;
+$pad_1: 5px;
+h1 {
+    border: 3px solid black;
+    font-family: "Courier New", Courier, monospace;
+}
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 300px;
+}
+td {
+    background-color:whitesmoke;
+    border: $bor;
+    padding: $pad_1;
+}
+th {
+    background-color: grey;
+    border: $bor;
+    padding: $pad_1;
+}
+.top {
+    background-color: $color;
+    border: $bor;
+    margin: $marg;
+    padding: $pad;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+.mid {
+    background-color: $color;
+    border: $bor;
+    margin: $marg;
+    padding: $pad;
+    font-size: 24px;
+}
+.last {
+    background-color: $color;
+    border: $bor;
+    margin: $marg;
+    padding: $pad;
+    font-size: 24px;
+}
+.end {
+    background-color: $color;
+    border: $bor;
+    margin: $marg;
+    padding: $pad;
+    font-size: 20px;
+}
+.button {
+    background-color: $color;
+    position: absolute;
+    top: 245%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.btn {
+    border: 1px solid white;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    transition: 0.6s ease;
+}
+.btn:hover {
+    background-color: lightgrey;
+    color:black
+}

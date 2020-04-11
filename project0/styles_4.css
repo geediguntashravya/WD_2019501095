@@ -1,0 +1,60 @@
+
+h1 {
+    border: 3px solid black;
+    font-family: "Courier New", Courier, monospace;
+}
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 300px;
+}
+th, td {
+    background-color:whitesmoke;
+    border: 1px solid black;
+    padding: 5px;
+}
+th {
+    background-color: grey;
+}
+.top, .mid, .bottom, .last, .end{
+    background-color: teal;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 10px;
+}
+.top {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+.mid {
+    font-size: 24px;
+}
+.bottom {
+    font-size: 20px;
+}
+.last {
+    font-size: 24px;
+}
+.end {
+    font-size: 20px;
+}
+.button {
+    background-color: teal;
+    position: absolute;
+    float: left;
+    top: 270%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.btn {
+    border: 1px solid white;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    transition: 0.6s ease;
+}
+.btn:hover {
+    background-color: lightgrey;
+    color:black
+}

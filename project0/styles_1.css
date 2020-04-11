@@ -1,0 +1,19 @@
+.button {
+    background-color: teal;
+    position: absolute;
+    float: left;
+    top: 130%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.btn {
+    border: 1px solid white;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    transition: 0.6s ease;
+}
+.btn:hover {
+    background-color: lightgrey;
+    color:black
+}
