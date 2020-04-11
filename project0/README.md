@@ -5,7 +5,7 @@ Web Programming with Python and JavaScript
 My project is about the four phases of my life. My schooling, college, graduation and post graduation.
 
 My whole project has 5 html pages, 4 css files and 1 scss file.
-index.html is my main webpage in which I have given links to the other four html pages. I have implemented index.html using basic html/css prpoerties. The styles.css is the css file included in this page.
+index.html is my main webpage in which I have given links to the other four html pages. I have implemented index.html using basic html/css properties. The styles.css is the css file included in this page.
 
 Then comes my school page. I have implemented this page using bootstrapping. I have also additionally added a button feature which will generate the link to official school website.
 
