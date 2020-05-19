@@ -1,13 +1,30 @@
 import React from "react";
-import {View, Text, TextInput, Button, StyleSheet, ScrollView} from "react-native";
+import {View,Text,Dimensions,TextInput, Button, StyleSheet, ScrollView} from "react-native";
 import DatePicker from 'react-native-datepicker';
+import {Card, Header} from "native-base"; 
+
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: 'skyblue',
       alignItems: 'center',
       justifyContent: 'center',
+      padding: 15,
     },
+    textInputStyle: {  
+        borderColor: "black",  
+        borderWidth: 1,
+        backgroundColor: "white",   
+        textAlign: "center"
+      }, 
+      box: {
+          borderWidth: 1,
+          borderColor: "black",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center"
+
+      } 
   });
 
 function Task(props) {
@@ -28,7 +45,6 @@ function Task(props) {
     </View>
     )
 }
-
 
 export default class TodoList extends React.Component {
     constructor(props) {
@@ -71,16 +87,22 @@ export default class TodoList extends React.Component {
 	
     render() {
         return (
-            <View>
-                <ScrollView>
-                <Text style={{textAlign:"center"}}>TODO List</Text>
-                    {
-                        this.state.list.map((t) =>				
-                            <Task key={t.id} tid={t.id} name={t.name} dueDate={t.dueDate} 
-                            delButton={<Button title="Delete" onPress={() =>this.handleDeleteTask(t.id)}/>}
-                            markButton={<Button title="Mark" onPress={() =>this.handleMarkTask(t.id)}/>} />)
-                    }
-                <TasknameForm onAddTask={this.handleAddTask} />
+            <View style={{flex: 1, flexDirection:"row"}}>
+            <ScrollView horizontal={true}>
+                <Card>
+                    <TasknameForm onAddTask={this.handleAddTask} />
+                </Card>
+                <Card style={{padding: 5}}>
+                <Header style={{backgroundColor: 'black'}}><Text style={{color:'white', paddingTop: 15}}>TASK BAR</Text></Header>
+                    <ScrollView>
+                        {
+                            this.state.list.map((t) =>				
+                                <Task key={t.id} tid={t.id} name={t.name} dueDate={t.dueDate} 
+                                delButton={<Button title="Delete" onPress={() =>this.handleDeleteTask(t.id)}/>}
+                                markButton={<Button title="Mark" onPress={() =>this.handleMarkTask(t.id)}/>} />)
+                        }
+                    </ScrollView>
+                </Card>
                 </ScrollView>
             </View>
         );
@@ -106,21 +128,18 @@ class TasknameForm extends React.Component {
     handleChange(event) {
 		//if(event.target.name=="taskname"){
 		this.setState({taskname:event.nativeEvent.text});
-		// if(event.target.name=="dueDate"){
-		// 	this.setState({dueDate:event.target.value});
-		// }
-        
+
     }
 
     render() {
         return(
             <View>
-                    <TextInput name="taskname" placeholder="Enter" value={this.state.taskname} onChange={this.handleChange} />
+                    <TextInput style={styles.textInputStyle} name="taskname" placeholder="Enter" value={this.state.taskname} onChange={this.handleChange} />
                     {/* <input type="date" name="dueDate" value={this.state.dueDate} onChange={this.handleChange} /> */}
                     <DatePicker
                         style={{width: 200}}
-                        dueDate={this.state.dueDate} //initial date from state
-                        mode="date" //The enum of date, datetime and time
+                        dueDate={this.state.dueDate} 
+                        mode="date" 
                         placeholder="select date"
                         format="DD-MM-YYYY"
                         minDate="01-01-2016"
@@ -134,19 +153,16 @@ class TasknameForm extends React.Component {
                             marginLeft: 0
                             },
                             dateInput: {
-                            marginLeft: 36
+                            marginLeft: 36,
+                            backgroundColor: "white",
+                            borderWidth: 1,
+                            borderColor: "black"
                             }
                         }}
                         onDateChange={(dueDate) => {this.setState({dueDate})}}
                         />
                     <Button title="add task" onPress={this.handleSubmit}/>
- 
             </View>
         );
     }
 }
-
-// ReactDOM.render(
-//     <TodoList list={[]} />,
-//     document.getElementById('props')
-// );
